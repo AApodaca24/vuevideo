@@ -24,6 +24,7 @@ export default {
   }),
   methods: {
     play() {
+      this.$refs.player.muted = true;
       this.$refs.player.play();
     },
     playNext() {
@@ -31,7 +32,6 @@ export default {
       if (index === this.demoVideos.length - 1) {
         const [nextVideo] = this.demoVideos;
         this.currentVideo = nextVideo;
-        console.log(this.currentVideo);
       } else {
         index += 1;
         const nextVideo = this.demoVideos.find(
